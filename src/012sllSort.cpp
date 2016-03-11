@@ -10,7 +10,7 @@ OUTPUT: Sorted SLL ,Head should Finally point to an sll of sorted 0,1,2
 
 ERROR CASES:
 
-NOTES: Only 0,1,2, will be in sll nodes
+NOTES: Only 0,1,2, will be in sll
 */
 
 #include <stdio.h>
@@ -21,6 +21,35 @@ struct node {
 	struct node *next;
 };
 
-void sll_012_sort(struct node *head){
+void sll_012_sort(struct node *head)
+{
+	int x;
+	struct node  *t1, *t2,*p;
 	
-}
+	p = head;
+	t1 = head;
+	t2 = head->next;
+	while (p != NULL)
+	{
+		t1 = head;
+		t2 = head->next;
+		while (t2 != NULL)
+		{
+
+			if (t1->data > t2->data)
+			{
+
+				x = t2->data;
+				t2->data = t1->data;
+				t1->data = x;
+			}
+
+			t2 = t2->next;
+			t1 = t1->next;
+		}p = p->next;
+	}
+	}
+
+
+
+
